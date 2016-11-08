@@ -27,6 +27,12 @@ install:
   # OCLint
   - ./install_oclint.sh
 
+# Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
 script: 
   # Build and run Boost.Test
   - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_boost_test.pro
@@ -36,9 +42,11 @@ script:
   - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_qtest.pro
   - make
   - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_qtest
-  # Build (but not run) 'real' program
+  # Build and run 'real' program
   - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest.pro
   - make
+  - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest &
+  - sudo killall -9 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest
   # Get code coverage
   - ./get_code_cov.sh
   - codecov
