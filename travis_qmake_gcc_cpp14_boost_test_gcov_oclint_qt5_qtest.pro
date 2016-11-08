@@ -27,5 +27,5 @@ CONFIG(release, debug|release) {
 SOURCES += qtmain.cpp my_functions.cpp my_dialog.cpp
 HEADERS += my_functions.h my_dialog.h
 FORMS += my_dialog.ui
-RESOURCES += travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5.qrc
+RESOURCES += travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest.qrc
 
