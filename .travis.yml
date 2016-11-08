@@ -28,14 +28,20 @@ install:
   - ./install_oclint.sh
 
 script: 
-  # Build test
-  - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_test.pro
+  # Build and run Boost.Test
+  - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_boost_test.pro
   - make
-  # Build 'real' program
-  - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5.pro
+  - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_boost_test
+  # Build and run QTest
+  - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_qtest.pro
   - make
-  # Run tests
-  - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_test
+  - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest_qtest
+  # Build and run 'real' program
+  - qmake -qt=qt5 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest.pro
+  - make
+  - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest &
+  - sleep 10
+  - sudo killall -9 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest
   # Get code coverage
   - ./get_code_cov.sh
   - codecov
