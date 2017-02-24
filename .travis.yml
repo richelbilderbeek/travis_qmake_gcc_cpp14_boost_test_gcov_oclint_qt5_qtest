@@ -25,7 +25,7 @@ install:
   # Codecov
   - sudo pip install codecov
   # OCLint
-  - ./install_oclint.sh
+  - ./install_oclint
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
@@ -48,10 +48,10 @@ script:
   - ./travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest &
   - sudo killall -9 travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest
   # Get code coverage
-  - ./get_code_cov.sh
+  - ./get_code_cov
   - codecov
   # Call OCLint
-  - ./do_oclint.sh
+  - ./do_oclint
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
