@@ -1,11 +1,8 @@
 # travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest
 
-[![Travis CI logo](TravisCI.png)](https://travis-ci.org)
-![Whitespace](Whitespace.png)
-[![Codecov logo](Codecov.png)](https://www.codecov.io)
-
-[![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest.svg?branch=master)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest)
-[![codecov.io](https://codecov.io/github/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest?branch=master)
+Branch|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Codecov logo](Codecov.png)](https://www.codecov.io)
+---|---|---
+master|[![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest.svg?branch=master)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest)|[![codecov.io](https://codecov.io/github/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/travis_qmake_gcc_cpp14_boost_test_gcov_oclint_qt5_qtest/branch/master)
 
 This GitHub is part of [the Travis C++ Tutorial](https://github.com/richelbilderbeek/travis_cpp_tutorial).
 
